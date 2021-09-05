@@ -2,6 +2,7 @@ body {
   background-image: url("./bg.jpg");
   font-family: "Roboto", sans-serif;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 /* search-box */
@@ -11,8 +12,8 @@ body {
   justify-content: space-around;
   align-items: center;
   background-color: #162935;
-  width: 80%;
-  height: 50vh;
+  width: 1500px;
+  height: 600px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 10%;
@@ -20,6 +21,22 @@ body {
   border-radius: 20px;
 }
 
+.submit-button {
+  background-color: aliceblue;
+  font-size: larger;
+  padding: 10px;
+  border-radius: 10px;
+  margin-top: 300px;
+  margin-right: 40px;
+  width: 100px;
+  text-align: center;
+  pointer-events: all;
+  z-index: 1;
+}
+.submit-button:hover {
+  background-color: black;
+  color: rgb(218, 217, 214);
+}
 .selectbox-container {
   display: flex;
   flex-direction: row;
@@ -34,22 +51,26 @@ body {
   width: 400px;
   height: 500px;
   padding: 10px;
+  margin-left: 70px;
 }
 
-.select-box .options-container {
+.options-container {
   background-color: aliceblue;
   width: 300px;
   opacity: 0;
   /* transition: all 0.2s; */
   border-radius: 8px;
   overflow: hidden;
-  margin-top: 190px;
+  margin-top: 254px;
+  pointer-events: none;
+  z-index: 2;
 }
 
 .select-box .options-container.active {
   max-height: 240px;
   opacity: 1;
   overflow-y: scroll;
+  pointer-events: all;
 }
 
 .select-box .option,
@@ -101,3 +122,51 @@ body {
   width: 22px;
   margin-left: 10px;
 }
+
+/* search box */
+.search-bar input {
+  width: 280px;
+  padding: 10px 10px;
+  font-family: "Roboto", sans-serif;
+  font-size: 18px;
+  position: absolute;
+  background-color: #162935;
+  color: azure;
+  border: none;
+}
+
+.search-bar {
+  margin-top: 210px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.search-bar.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.option label {
+  pointer-events: none;
+}
+
+.model-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+/* .model-option {
+  font-size: larger;
+  background-color: #162935;
+  color: aliceblue;
+  padding-top: 20px;
+  margin: 10px;
+  width: 500px;
+  height: 50px;
+  text-align: center;
+  opacity: 80%;
+  border-radius: 20px;
+} */
